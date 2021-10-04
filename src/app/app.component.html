@@ -1,3 +1,32 @@
+<h1>Class & Style</h1>
+<input type="text" required #nameStyle="ngModel" [(ngModel)]="name" />
+<!--Add class si se cumple la condición que recibe [class.NameClase]="condición"-->
+<p class="message_error" [class.invalid]="nameStyle.invalid">
+  El campo es requerido
+</p>
+<!--Se modifica el estilo de forma directa en el atributo style-->
+<p [style.font-style]="nameStyle.invalid ? 'italic' : 'normal'">
+  Texto texto texto
+</p>
+<label for="widthImage">
+  <span>Width image: </span>
+  <input
+    id="widthImage"
+    type="text"
+    placeholder="width image"
+    required
+    [(ngModel)]="widthImg"
+  />
+</label>
+<img
+  [style.width.px]="widthImg"
+  [style.height.px]="widthImg"
+  style="object-fit: cover"
+  [src]="img"
+  alt="imagen"
+/>
+<hr />
+
 <h1>*ngFor in Objs</h1>
 <div class="products_grid">
   <div class="products_card" *ngFor="let product of products">
@@ -8,6 +37,7 @@
     </div>
   </div>
 </div>
+<hr />
 
 <h1>[ngSwitch]</h1>
 <input type="text" required [(ngModel)]="name" />
@@ -18,6 +48,7 @@
   <p *ngSwitchCase="'joha'">Soy joha</p>
   <p *ngSwitchDefault>Sin coincidencias</p>
 </div>
+<hr />
 
 <h1>*ngFor</h1>
 <input type="text" required [(ngModel)]="newName" />
@@ -29,6 +60,7 @@
     <button (click)="removeName(i)">Delete</button>
   </li>
 </ul>
+<hr />
 
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="name" />
@@ -37,10 +69,12 @@
 <ng-template #myBlock>
   <p>Sin coincidencia</p>
 </ng-template>
+<hr />
 
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toogleButton()">Toogle Button</button>
+<hr />
 
 <h1>Propiedades y template string</h1>
 <div>
@@ -69,7 +103,6 @@
   </picture>
   <button (click)="incrementAge()">Age ++</button>
   <progress max="100" [value]="person.age"></progress>
-  <p>Valid: {{ nameInput.valid }}</p>
   <label>
     <span>Person name: </span>
     <input
@@ -79,6 +112,7 @@
       [(ngModel)]="person.name"
     />
   </label>
+  <p>Valid: {{ nameInput.valid }}</p>
 </div>
 <hr />
 <h1>Hola mundo</h1>
