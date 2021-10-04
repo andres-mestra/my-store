@@ -1,3 +1,22 @@
+<h1>*ngFor in Objs</h1>
+<div
+  style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  "
+>
+  <div *ngFor="let product of products">
+    <img
+      style="width: 300px; height: 200px; object-fit: cover"
+      class="product_image"
+      [src]="product.image"
+      alt="imagen producto"
+    />
+    <h2>${{ product.price }}</h2>
+    <p>{{ product.name }}</p>
+  </div>
+</div>
+
 <h1>*ngFor</h1>
 <input type="text" required [(ngModel)]="newName" />
 <button (click)="addName()">Add name</button>
