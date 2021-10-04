@@ -14,7 +14,7 @@
   </picture>
   <label>
     <span>Name: </span>
-    <input (input)="onChange($event)" [value]="name" />
+    <input type="text" (input)="onChange($event)" [value]="name" />
   </label>
 </div>
 
@@ -29,6 +29,16 @@
   </picture>
   <button (click)="incrementAge()">Age ++</button>
   <progress max="100" [value]="person.age"></progress>
+  <p>Valid: {{ nameInput.valid }}</p>
+  <label>
+    <span>Person name: </span>
+    <input
+      type="text"
+      required
+      #nameInput="ngModel"
+      [(ngModel)]="person.name"
+    />
+  </label>
 </div>
 <hr />
 <h1>Hola mundo</h1>
