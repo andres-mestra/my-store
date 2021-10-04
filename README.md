@@ -1,5 +1,7 @@
 # MyStore
 
+App store, construida siguiendo el curso de fundamentos de Angular de Platzi
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
 ## Development server
