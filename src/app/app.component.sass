@@ -1,5 +1,16 @@
-.product
+.products
+  &_grid
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    grid-gap: 5rem
+  &_card
+    backgrond: #fff
+    border-radius: 20px
+    overflow: hidden
   &_image
     object-fit: cover
-    height: 200px
-    width: 300px
+    width: 100%
+  &_details
+    padding: 2rem
+    display: grid
+    grid-gap: 1rem

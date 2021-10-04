@@ -1,3 +1,14 @@
+<h1>*ngFor in Objs</h1>
+<div class="products_grid">
+  <div class="products_card" *ngFor="let product of products">
+    <img class="products_image" [src]="product.image" alt="imagen producto" />
+    <div class="products_details">
+      <h2 class="products_price">${{ product.price }}</h2>
+      <p class="products_name">{{ product.name }}</p>
+    </div>
+  </div>
+</div>
+
 <h1>[ngSwitch]</h1>
 <input type="text" required [(ngModel)]="name" />
 <div [ngSwitch]="name">
@@ -6,25 +17,6 @@
   <p *ngSwitchCase="'laura'">Soy laura</p>
   <p *ngSwitchCase="'joha'">Soy joha</p>
   <p *ngSwitchDefault>Sin coincidencias</p>
-</div>
-
-<h1>*ngFor in Objs</h1>
-<div
-  style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  "
->
-  <div *ngFor="let product of products">
-    <img
-      style="width: 300px; height: 200px; object-fit: cover"
-      class="product_image"
-      [src]="product.image"
-      alt="imagen producto"
-    />
-    <h2>${{ product.price }}</h2>
-    <p>{{ product.name }}</p>
-  </div>
 </div>
 
 <h1>*ngFor</h1>
