@@ -1,3 +1,14 @@
+<h1>*ngFor</h1>
+<input type="text" required [(ngModel)]="newName" />
+<button (click)="addName()">Add name</button>
+<ul>
+  <li *ngIf="names.length === 0">No hay names</li>
+  <li *ngFor="let name of names; index as i">
+    {{ i }} {{ name }}
+    <button (click)="removeName(i)">Delete</button>
+  </li>
+</ul>
+
 <h1>*ngIf</h1>
 <input type="text" required [(ngModel)]="name" />
 <p *ngIf="name.toLocaleLowerCase() === 'andres'; else myBlock">Soy Andres</p>

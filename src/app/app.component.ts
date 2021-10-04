@@ -16,6 +16,14 @@ export class AppComponent {
     img: 'https://source.unsplash.com/daily'
   }
 
+  names: string[] = [
+    'Nico',
+    'lau',
+    'Camilo',
+    'Joha'
+  ]
+  newName = ''
+
   toogleButton() {
     this.btnDisabled = !this.btnDisabled
   }
@@ -27,5 +35,14 @@ export class AppComponent {
   onChange(event: Event) {
     const { value } = (event.target as HTMLInputElement)
     this.name = value
+  }
+
+  addName(){
+    this.newName.length > 0 && this.names.push(this.newName)
+    this.newName = ''
+  }
+
+  removeName(index: number) {
+    this.names.splice(index, 1)
   }
 }
