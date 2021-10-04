@@ -1,3 +1,11 @@
+<h1>*ngIf</h1>
+<input type="text" required [(ngModel)]="name" />
+<p *ngIf="name.toLocaleLowerCase() === 'andres'; else myBlock">Soy Andres</p>
+<p *ngIf="name.toLocaleLowerCase() === 'nicolas'; else myBlock">Soy Nicolas</p>
+<ng-template #myBlock>
+  <p>Sin coincidencia</p>
+</ng-template>
+
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toogleButton()">Toogle Button</button>
