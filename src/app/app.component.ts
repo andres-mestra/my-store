@@ -13,6 +13,19 @@ export class AppComponent {
   person = {
     name: "Nicolas",
     age: 18,
-    img: 'https://source.unsplash.com/random'
+    img: 'https://source.unsplash.com/daily'
+  }
+
+  toogleButton() {
+    this.btnDisabled = !this.btnDisabled
+  }
+
+  incrementAge() {
+    this.person.age += 1
+  }
+
+  onChange(event: Event) {
+    const { value } = (event.target as HTMLInputElement)
+    this.name = value
   }
 }
